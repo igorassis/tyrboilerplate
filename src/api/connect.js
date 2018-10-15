@@ -1,2 +1,2 @@
-export const DOMAIN = "https://mydomain.com/";
-export const PRODUCTS = DOMAIN + "products";
+export const DOMAIN = "https://swapi.co/api/";
+export const LUKE = DOMAIN + "people/1/";

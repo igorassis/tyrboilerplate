@@ -1,4 +1,4 @@
 import { combineReducers } from "redux";
-import { products } from "../components/home/HomeReducers";
+import { PersonReducer as person } from "../components/home/HomeReducers";
 
-export const Reducers = combineReducers({ products });
+export const Reducers = combineReducers({ person });

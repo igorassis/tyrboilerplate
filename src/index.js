@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider as ReduxProvider } from 'react-redux';
 import { CookiesProvider } from 'react-cookie';
-import { store } from './store';
+import configureStore from './store';
 import Router from './routes';
 import './index.css';
 // import Home from './components/home/HomeContainer';
 import * as serviceWorker from './serviceWorker';
+
+const store = configureStore();
 
 ReactDOM.render(
   <ReduxProvider store={store}>

@@ -2,21 +2,28 @@ import axios from "axios";
 import * as API from "../../api/connect";
 
 //URL
-const PRODUCTS = API.PRODUCTS;
+const LUKE = API.LUKE;
 
 //types & Dispatch
-export const LOAD_PRODUCTS = "LOAD_PRODUCTS";
-export const loadProductsDispatch = products => {
-  return { type: LOAD_PRODUCTS, products };
+export const LOAD_PERSON = "LOAD_PERSON";
+export const loadPersonDispatch = person => {
+  return { type: LOAD_PERSON, person };
 };
 
-export const loadProduct = () => {
-  return async dispatch => {
-    try {
-      const product = await axios.get(PRODUCTS);
-      return dispatch(loadProductsDispatch(product));
-    } catch (e) {
-      throw e;
-    }
-  };
+export const loadPerson = () => {
+  // return async dispatch => {
+  //   try {
+  //     const person = await axios.get(LUKE);
+  //     return dispatch(loadPersonDispatch(person));
+  //   } catch (e) {
+  //     throw e;
+  //   }
+  // };
+return(dispatch) => {
+  return axios.get(LUKE)
+  .then(response => {
+    return response.data;
+  })
+  .then(person => dispatch(loadPersonDispatch(person)))
+  }
 };

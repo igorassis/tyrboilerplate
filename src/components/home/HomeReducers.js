@@ -1,16 +1,19 @@
 import {
-  LOAD_PRODUCTS
+  LOAD_PERSON
 } from './HomeActions';
 
 const initialState = {
-  products: []
+  person: []
 }
 
-export const products = ( state = initialState.products, action) => {
+export const PersonReducer = ( state = initialState.person, action) => {
   switch(action.type){
-    case LOAD_PRODUCTS:
-      return action.products;
+    case LOAD_PERSON:
+      console.log('Person Reducer:', action.person);
+      return action.person;
     default:
       return state;
   }
 }
+
+export default PersonReducer;
